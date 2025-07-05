@@ -1,11 +1,14 @@
 ## Install Docker
 
-A very detailed instructions to install Docker are provide in the below link
 
-https://docs.docker.com/get-docker/
+Step-by-step guide to install Docker on Ubuntu, Mac, and Windows
 
+### Install Docker on Ubuntu (Linux)
 
-You can create an Ubuntu EC2 Instance on AWS and run the below commands to install docker.
+(Create ubuntu ec2-instance using t2.micro(all traffic))
+
+👉 https://docs.docker.com/get-docker/
+
 
 `sudo apt update`
 
@@ -85,13 +88,4 @@ Use the same command again, to verify that docker is up and running.
 `docker run hello-world`
 
 
-Output should look like:
-
-```
-....
-....
-Hello from Docker!
-This message shows that your installation appears to be working correctly.
-...
-...
-```
+-----
