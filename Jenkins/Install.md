@@ -5,6 +5,8 @@ Step-by-step guide to install Jenkins on Ubuntu, Mac, and Windows
 
 ### 1. Install Jenkins on Ubuntu (Linux)
 
+(Create ubuntu ec2-instance using t2.micro(all traffic))
+
 
 Install Java
 
