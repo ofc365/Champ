@@ -90,7 +90,7 @@ In the Jenkins master server, we will define a pipeline and create a job and the
 
 ### Step 4: In the "Project url" section copy the GitHub URL of the project repository and paste it.
 
-`https://github.com/icloudrepo1/jenkins-project-repo.git`
+`mention your github repo`
 
 ### Step 5: Scroll down to the "Pipeline" section copy this pipeline and paste it in the Pipeline script & build
 
