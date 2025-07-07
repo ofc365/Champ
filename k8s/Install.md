@@ -27,7 +27,7 @@ Install k8s cli tool `sudo snap install kubectl --classic`
 
 Now check cluster info `kubectl get nodes` OR `kubectl cluster-info` OR `kubectl get po -A`
 
-.............
+..............
 
 
 ## K8S Install : Using KUBEADM
