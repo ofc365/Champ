@@ -95,7 +95,7 @@ sudo systemctl start kubelet
 ```
 
 
-#### Execute ONLY on "Master Node"
+#### Execute ONLY on Master Node
 
 ```
 sudo kubeadm config images pull
