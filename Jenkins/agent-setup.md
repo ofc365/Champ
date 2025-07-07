@@ -1,34 +1,22 @@
-# Jenkins agent set-up
-===============================
+## Jenkins agent set-up
 
 
-### STEPS
-
-#### 1. create two ec2- instances ( ubuntu )
+create two ec2- instances ( ubuntu , t2.micro, agent_key.pem )
    
-   - ubuntu-24 ami
-   - t2.micro
-   - keypair = agent_key.pem
-   - security group = new security-group ----> all traffic ( anywhere )
-   - number of instances ---> 2 ( jenkins-master , jenkins-worker )
-   - launch instances
+connect jenkins-master ec2-instance and install jenkins
 
-#### 2. connect jenkins-master ec2-instance and install jenkins
-
-   - ( follow , how to install jenkins on ubuntu machine )
+- ( follow , how to install jenkins on ubuntu machine )
 
      
-#### 3. connect jenkins-slave ec2-instance and install java
+connect jenkins-slave ec2-instance and install java
 
-   - sudo apt update
-   - sudo apt install fontconfig openjdk-17-jre -y
-   - sudo apt install docker.io -y
-   - sudo usermod -aG docker $USER
-     
-   - sudo reboot
+`sudo apt update`
+`sudo apt install fontconfig openjdk-17-jre -y`
+`sudo apt install docker.io -y`
+`sudo usermod -aG docker $USER`
+`sudo reboot`
 
-
-#### 4. Go to jenkins-master ec2-instance
+Go to jenkins-master ec2-instance
 
    - ssh-keygen -b 1024 -t rsa
    - cd .ssh
@@ -36,12 +24,12 @@
    - cat id_rsa.pub ( copy public key )
 
 
-#### 5. Go to jenkins-slave ec2-instance 
+Go to jenkins-slave ec2-instance 
 
    - vi /home/ubuntu/.ssh/authorized_keys ( paste the public key you copied from Jenkins Master )
 
 
-#### 6. Go to jenkins-master ec2-instance
+Go to jenkins-master ec2-instance
 
    - ssh ubuntu@PUB-IP-SLAVE
    - Are you sure you want to continue connecting (yes/no/[fingerprint])? ------> yes
@@ -51,7 +39,7 @@
   - exit
 
 
-#### 7. Open jenkins for Setting up a Node agent
+Open jenkins for Setting up a Node agent
 
    - jenkins-master ec2-instance:8080
    - sudo cat /var/lib/jenkins/secrets/initialAdminPassword
