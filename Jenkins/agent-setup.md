@@ -11,9 +11,13 @@ connect jenkins-master ec2-instance and install jenkins
 connect jenkins-slave ec2-instance and install java
 
 `sudo apt update`
+
 `sudo apt install fontconfig openjdk-17-jre -y`
+
 `sudo apt install docker.io -y`
+
 `sudo usermod -aG docker $USER`
+
 `sudo reboot`
 
 Go to jenkins-master ec2-instance
