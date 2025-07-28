@@ -1,24 +1,16 @@
 ## Install Jenkins
 
+👉 https://www.jenkins.io/doc/book/installing/
 
-Step-by-step guide to install Jenkins on Ubuntu, Mac, and Windows
 
 ### 1. Install Jenkins on Ubuntu (Linux)
 
-(Create ubuntu ec2-instance using t2.micro(all traffic))
 
+```
+sudo apt update
+sudo apt install fontconfig openjdk-17-jre -y
+```
 
-Install Java
-
-
-`sudo apt update`
-
-`sudo apt install fontconfig openjdk-17-jre -y`
-
-
-Now, you can proceed with installing Jenkins
-
-👉 https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
 
 ```
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
@@ -32,34 +24,29 @@ jenkins --version
 
 ```
 
-Login to Jenkins using the below URL :- EX- `http://(ec2-instance-public-ip-address):8080`
+Login to Jenkins : `server-ip:8080`
 
   
-
-`sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
+```
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
    
-
-Click on Install suggested plugins
-
-
-Start using the Jenkins 
-
-
 
 
 ### 2. Install Jenkins on Windows
 
-Download java & Install java
 
-`https://www.oracle.com/in/java/technologies/downloads/#jdk21-windows`
-
-
-Download Jenkins & Install
-
-`https://www.jenkins.io/download/thank-you-downloading-windows-installer-stable/`
+```
+https://www.oracle.com/in/java/technologies/downloads/#jdk21-windows
+```
 
 
-`login and access` =====>  `localhost:8080`
+```
+https://www.jenkins.io/download/thank-you-downloading-windows-installer-stable/
+```
 
 
------
+Login to Jenkins :  `localhost:8080`
+
+
+------------------------------------
