@@ -1,91 +1,28 @@
 ## Install Docker
 
 
-Step-by-step guide to install Docker on Ubuntu, Mac, and Windows
-
-### Install Docker on Ubuntu (Linux)
-
-(Create ubuntu ec2-instance using t2.micro(all traffic))
-
 👉 https://docs.docker.com/get-docker/
 
 
-`sudo apt update`
+### Install Docker on Ubuntu (Linux)
 
-`sudo apt install docker.io -y`
-
-
-
-You can create an Linux EC2 Instance on AWS and run the below commands to install docker.
-
-
-`sudo yum update`
-
-`sudo yum install docker -y`
-
-
-#### Start Docker and Grant Access
-
-A very common mistake that many beginners do is, After they install docker using the sudo access, they miss the step to Start the Docker daemon and grant acess to the user they want to use to interact with docker and run docker commands.
-
-Always ensure the docker daemon is up and running.
-
-A easy way to verify your Docker installation is by running the below command
-
-
-`docker run hello-world`
-
-
-If the output says:
 
 ```
-docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
-See 'docker run --help'.
+sudo apt update
+sudo apt install docker.io -y
+
+sudo systemctl status docker
+sudo systemctl start docker
+
+docker --version
 ```
 
-This can mean two things, 
-1. Docker deamon is not running.
-2. Your user does not have access to run docker commands.
+Grant Access : `sudo usermod -aG docker ubuntu`
+
+(You need to logout and login back for the changes to be reflected.)
 
 
-#### Start Docker daemon
-
-You use the below command to verify if the docker daemon is actually started and Active
+You can create an Linux EC2 Instance on AWS and run the below commands to install docker `sudo yum install docker -y`
 
 
-`sudo systemctl status docker`
-
-
-If you notice that the docker daemon is not running, you can start the daemon using the below command
-
-
-`sudo systemctl start docker`
-
-
-
-#### Grant Access to your user to run docker commands
-
-To grant access to your user to run the docker command, you should add the user to the Docker Linux group. Docker group is create by default when docker is installed.
-
-
-`sudo usermod -aG docker ubuntu`
-
-
-In the above command `ubuntu` is the name of the user, you can change the username appropriately.
-
-**NOTE:** : You need to logout and login back for the changes to be reflected.
-
-
-#### Docker is Installed, up and running
-
-Use the same command again, to verify that docker is up and running.
-
-
-`docker --version`
-
-
-
-`docker run hello-world`
-
-
------
+----------------------------------
