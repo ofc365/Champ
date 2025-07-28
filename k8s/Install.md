@@ -1,31 +1,42 @@
 ## K8S Install : Using Minikube
 
-
-(Create ubuntu ec2-instance(k8s-master) using t2.medium(all traffic), key pair  = k8s.pem)
-
-Connect k8s-master instance & install docker - minikube
-
-`sudo apt update`
-
-`sudo apt install docker.io -y`
-
-
 👉 `https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download`
+
+
+Need : `t2.medium`
+
+```
+sudo apt update
+sudo apt install docker.io -y
+```
+
 
 ```
 curl -LO https://github.com/kubernetes/minikube/releases/latest/download/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
-
 ```
 
-Allow permission `sudo usermod -aG docker $USER && newgrp docker`
+```
+sudo usermod -aG docker $USER && newgrp docker
+```
 
+```
+minikube start --driver=docker
+```
 
-Start minikube service `minikube start --driver=docker`
+```
+sudo snap install kubectl --classic
+```
 
-Install k8s cli tool `sudo snap install kubectl --classic`
+```
+kubectl get nodes
+```
 
-Now check cluster info `kubectl get nodes` OR `kubectl cluster-info` OR `kubectl get po -A`
+OR 
+
+```
+kubectl get po -A
+```
 
 ...............
 
@@ -33,14 +44,15 @@ Now check cluster info `kubectl get nodes` OR `kubectl cluster-info` OR `kubectl
 ## K8S Install : Using KUBEADM
 
 
-(Create Two ubuntu ec2-instance(k8s-master) using t2.medium(all traffic), key pair  = k8s.pem)
-
-
-Execute on Both "Master" & "Worker Node"
-
 👉 `https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/`
 
-#### Run the following commands on both the master and worker nodes to prepare them for kubeadm.
+
+Need : More than two instances and `t2.medium`
+
+
+
+#### Execute on Both Master & Worker Node
+
 
 ```
 # disable swap
