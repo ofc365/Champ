@@ -131,11 +131,12 @@ kubeadm token create --print-join-command
 
 #### Execute on ALL of your Worker Node's
 
-Perform pre-flight checks `sudo kubeadm reset pre-flight checks`
+```
+sudo kubeadm reset pre-flight checks
+```
 
 Paste the join command you got from the master node and append `--v=5` at the end.
 
-Use `sudo` before the token.
 
 Verify Cluster Connection :- On Master Node `kubectl get nodes`
 
