@@ -1,22 +1,20 @@
 # minikube-proj
 
 
-step-1 :- create ubuntu instance
+create instance ; install docker, minikube and kubectl
 
-step-2 :- install docker
+```
+eval $(minikube docker-env)
+```
 
-step-3 :- install minikube and kubectl
-
-step-4 :- `eval $(minikube docker-env)`
-
-step-5 :- create `Dockerfile`
+vi Dockerfile
 
 ```
 FROM nginx:alpine
 COPY index.html /usr/share/nginx/html/index.html
 ```
 
-step-6  :- create `index.html`
+vi index.html
 
 ```
 <html>
@@ -29,15 +27,13 @@ step-6  :- create `index.html`
 </html>
 ```
 
-
-
-step-7 :- Build image , tag and push
+Build image , tag and push
 
 
 `docker build -t minikube-img:latest .`
 
 
-step-8 :- create `deployment.yaml`
+vi deployment.yaml
 
 ```
 apiVersion: apps/v1
@@ -76,8 +72,15 @@ spec:
     nodePort: 30000
 ```
 
-step-9 :- Apply it `kubectl apply -f deployment.yaml` &  `minikube service html-app-service`
 
-step-10 :- Test it `ssh -i "key-name" -L 30000:192.168.49.2:30000 ubuntu@ec2-pub-ip`
+```
+kubectl apply -f deployment.yaml
+```
+
+```
+minikube service html-app-service
+```
+
+Test it : `ssh -i "key-name" -L 30000:192.168.49.2:30000 ubuntu@ec2-pub-ip`
 
 ------------------------------------------------
