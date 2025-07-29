@@ -83,4 +83,7 @@ minikube service html-app-service
 
 Test it : `ssh -i "key-name" -L 30000:192.168.49.2:30000 ubuntu@ec2-pub-ip`
 
+`localhost:30000`
+
+
 ------------------------------------------------
