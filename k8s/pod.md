@@ -2,7 +2,7 @@
 
 
 ```
-vi mypodcrt.yml
+vi default-namespace-pod-crt.yml
 ```
 
 
@@ -22,7 +22,7 @@ spec:
 
 
 ```
-kubectl apply -f mypodcrt.yml
+kubectl apply -f default-namespace-pod-crt.yml
 ```
 
 ```
@@ -41,7 +41,7 @@ kubectl get pod pod1 -o wide
 
 
 ```
-kubectl create namespace <name>
+kubectl create namespace custons
 ```
 
 ```
@@ -50,7 +50,7 @@ kubectl get ns
 
 
 ```
-vi mypodcrt.yml
+vi custom-namespace-pod-crt.yml
 ```
 
 
@@ -58,14 +58,14 @@ vi mypodcrt.yml
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod1
-  namespace: <namespacename>
+  name: pod2
+  namespace: custons
 spec:
   containers:
-  - name: container1
+  - name: container2
     image: nginx
     ports:
-    - containerPort: 80
+    - containerPort: 81
 
 ```
 
