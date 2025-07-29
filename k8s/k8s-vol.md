@@ -75,15 +75,6 @@ kubectl exec -it pvc-use-pod -- sh
 cat /data/mydata.txt
 ```
 
-OR
-
-```
-cd data/
-```
-
-```
-cat mydata.txt
-```
 
 
 
