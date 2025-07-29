@@ -38,7 +38,7 @@
 
 5. Enable Static Website Hosting on S3 , Index document: index.html
 
-6. Test this in a browser. If it works, proceed to CloudFront.
+6. Test this in a browser. 
 
 
 7. Create Distribution
