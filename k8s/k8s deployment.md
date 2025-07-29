@@ -47,5 +47,7 @@ kubectl get pods
 kubectl describe pod <pod-name>
 ```
 
+For scale `kubectl scale deployment --replicas=5 myapp`
+
 
 ---------------------------------------------------------------
